@@ -24,16 +24,18 @@ const handleLogout = async () => {
   const publicLinks = [
     { name: "Home", href: "/" },
     { name: "Features", href: "#features" },
-    { name: "About", href: "/about" },
+    { name: "Knowledge Listing", href: "/knowledge" },
     { name: "Contact", href: "/contact" },
   ];
 
   const privateLinks = [
     { name: "Dashboard", href: "/dashboard" },
+    { name: "Knowledge Listing", href: "/knowledge" },
+
     { name: "AI Chat", href: "/dashboard/ai-chat" },
     { name: "Generator", href: "/dashboard/ai-generator" },
-    { name: "Manage Items", href: "/dashboard/manage-items" },
-    { name: "Analytics", href: "/dashboard/analytics" },
+    { name: "Manage Items", href: "/items/manage" },
+    { name: "Add Items", href: "/items/add" },
   ];
 
   const navLinks = isLoggedIn ? privateLinks : publicLinks;
