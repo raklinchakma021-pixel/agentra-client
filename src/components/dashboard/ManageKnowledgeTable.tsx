@@ -15,12 +15,14 @@ interface Knowledge {
 
 async function getKnowledge() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/knowledge`
+    `${process.env.NEXT_PUBLIC_API_URL}/items`
   );
 
   if (!res.ok) throw new Error("Failed");
 
-  return res.json();
+  const json = await res.json();
+
+  return json.data; // <-- Return the array only
 }
 
 export default function ManageKnowledgeTable() {
@@ -29,6 +31,7 @@ export default function ManageKnowledgeTable() {
     queryFn: getKnowledge,
   });
 
+console.log("DATA:", data);
   if (isLoading) {
     return (
       <div className="flex justify-center py-20">
@@ -49,93 +52,140 @@ export default function ManageKnowledgeTable() {
     <>
       {/* Desktop */}
 
-      <div className="hidden md:block overflow-x-auto rounded-xl border">
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Pricing</th>
-              <th>Level</th>
-              <th className="text-center">Actions</th>
-            </tr>
-          </thead>
+    <div className="hidden md:block overflow-x-auto  rounded-2xl border border-base-300 bg-base-100 shadow-xl">
+  <table className="table table-zebra">
+    <thead className="bg-base-200">
+      <tr className="text-base-content">
+        <th className="px-6 py-5 text-sm font-bold uppercase tracking-wide">
+          Article
+        </th>
 
-          <tbody>
-            {data.map((item: Knowledge) => (
-              <tr key={item._id}>
-                <td>
-                  <img
-                    src={item.image}
-                    className="w-16 h-16 rounded object-cover"
-                    alt=""
-                  />
-                </td>
+        <th className="text-sm font-bold uppercase tracking-wide">
+          Category
+        </th>
 
-                <td>{item.title}</td>
+        <th className="text-sm font-bold uppercase tracking-wide">
+          Price
+        </th>
 
-                <td>{item.category}</td>
+        <th className="text-sm font-bold uppercase tracking-wide">
+          Level
+        </th>
 
-                <td>{item.pricing}</td>
+        <th className="text-center text-sm font-bold uppercase tracking-wide">
+          Actions
+        </th>
+      </tr>
+    </thead>
 
-                <td>{item.level}</td>
+    <tbody>
+      {data.map((item: Knowledge) => (
+        <tr
+          key={item._id}
+          className="hover:bg-primary/5 transition-all duration-300 m-6"
+        >
+          <td className="py-5">
+            <div className="flex items-center gap-5">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="h-20 w-20 rounded-xl object-cover ring-2 ring-primary/20 ml-6"
+              />
 
-                <td>
-                  <div className="flex gap-2 justify-center">
-                    <Link
-                      href={`/knowledge/${item._id}`}
-                      className="btn btn-info btn-sm"
-                    >
-                      View
-                    </Link>
+              <div>
+                <h2 className="font-semibold text-lg">
+                  {item.title}
+                </h2>
 
-                    <DeleteKnowledgeButton id={item._id} />
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+              </div>
+            </div>
+          </td>
 
-      {/* Mobile */}
+          <td>
+            <span className="badge badge-primary badge-outline badge-lg p-6">
+              {item.category || "AI"}
+            </span>
+          </td>
 
-      <div className="grid gap-5 md:hidden">
-        {data.map((item: Knowledge) => (
-          <div
-            key={item._id}
-            className="border rounded-xl p-4 shadow"
-          >
-            <img
-              src={item.image}
-              className="w-full h-44 rounded object-cover"
-              alt=""
-            />
+          <td>
+            <span className="badge p-6 badge-success badge-lg">
+              {item.pricing || "Free"}
+            </span>
+          </td>
 
-            <h2 className="font-bold mt-3">
-              {item.title}
-            </h2>
+          <td>
+            <span className="badge badge-warning badge-lg p-6">
+              {item.level || "Beginner"}
+            </span>
+          </td>
 
-            <p>{item.category}</p>
-
-            <p>{item.pricing}</p>
-
-            <p>{item.level}</p>
-
-            <div className="flex gap-3 mt-4">
+          <td>
+            <div className="flex justify-center gap-3">
               <Link
-                href={`/knowledge/${item._id}`}
-                className="btn btn-info btn-sm flex-1"
+                href={`/items/${item._id}`}
+                className="btn btn-primary bg-blue-600 px-4 btn-sm text-white rounded-lg"
               >
                 View
               </Link>
 
               <DeleteKnowledgeButton id={item._id} />
             </div>
-          </div>
-        ))}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+      {/* Mobile */}
+
+      <div className="grid gap-6 lg:hidden">
+  {data.map((item: Knowledge) => (
+    <div
+      key={item._id}
+      className="bg-base-100 rounded-2xl shadow-lg overflow-hidden border border-base-300"
+    >
+      <img
+        src={item.image}
+        alt={item.title}
+        className="w-full h-52 object-cover"
+      />
+
+      <div className="p-5">
+        <h2 className="font-bold text-xl">
+          {item.title}
+        </h2>
+
+      
+
+        <div className="flex flex-wrap gap-2 mt-4">
+          <span className="badge badge-secondary">
+            {item.category || "AI"}
+          </span>
+
+          <span className="badge badge-success">
+            {item.pricing || "Free"}
+          </span>
+
+          <span className="badge badge-accent">
+            {item.level || "Beginner"}
+          </span>
+        </div>
+
+        <div className="flex gap-3 mt-6">
+          <Link
+            href={`/items/${item._id}`}
+            className="btn btn-primary bg-blue-600 text-white px-4 flex-1"
+          >
+            View
+          </Link>
+
+          <DeleteKnowledgeButton id={item._id} />
+        </div>
       </div>
+    </div>
+  ))}
+</div>
     </>
   );
 }

@@ -13,7 +13,7 @@ export default function DeleteKnowledgeButton({
   const mutation = useMutation({
     mutationFn: async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/knowledge/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/items/${id}`,
         {
           method: "DELETE",
         }
@@ -40,7 +40,7 @@ export default function DeleteKnowledgeButton({
   return (
     <button
       onClick={() => mutation.mutate()}
-      className="btn btn-error btn-sm"
+      className="btn btn-error bg-red-600 text-white px-4 btn-sm mr-6"
     >
       Delete
     </button>

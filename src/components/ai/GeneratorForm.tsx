@@ -59,7 +59,7 @@ const handleSubmit = (e: React.FormEvent) => {
       onSubmit={handleSubmit}
       className="space-y-4 rounded-xl border p-6 bg-white shadow"
     >
-      <h2 className="text-2xl font-bold">
+      <h2 className="text-2xl font-bold text-blue-700">
         AI Content Generator
       </h2>
 

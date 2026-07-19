@@ -43,7 +43,7 @@ if (isLoading) {
     <div className="rounded-xl border bg-white shadow">
 
       <div className="border-b p-4">
-        <h2 className="text-xl font-bold">
+        <h2 className="text-xl font-bold text-blue-700">
           History
         </h2>
       </div>
