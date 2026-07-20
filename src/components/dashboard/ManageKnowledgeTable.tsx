@@ -122,7 +122,7 @@ console.log("DATA:", data);
           <td>
             <div className="flex justify-center gap-3">
               <Link
-                href={`/items/${item._id}`}
+                 href={`/knowledge/${item._id}`}
                 className="btn btn-primary bg-blue-600 px-4 btn-sm text-white rounded-lg"
               >
                 View
@@ -174,7 +174,7 @@ console.log("DATA:", data);
 
         <div className="flex gap-3 mt-6">
           <Link
-         href={`/knowledge/${article._id}`}
+         href={`/knowledge/${item._id}`}
             className="btn btn-primary bg-blue-600 text-white px-4 flex-1"
           >
             View
