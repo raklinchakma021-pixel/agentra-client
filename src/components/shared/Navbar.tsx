@@ -31,6 +31,7 @@ const handleLogout = async () => {
     
     { name: "Dashboard", href: "/dashboard" },
     { name: "Knowledge Listing", href: "/knowledge" },
+        { name: "AiKnowledge Generator", href: "/dashboard/ai-generator" },
 
     { name: "Manage Items", href: "/items/manage" },
     { name: "Add Items", href: "/items/add" },
