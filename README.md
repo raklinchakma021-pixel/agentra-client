@@ -1,36 +1,469 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 Agentra AI – Full Stack Agentic AI Platform
 
-## Getting Started
+Agentra AI is a modern Full Stack Agentic AI web application built with **Next.js, Express.js, TypeScript, MongoDB, and Groq AI**. The platform combines AI-powered content generation, an AI Knowledge Hub, analytics, and secure authentication into a production-ready application.
 
-First, run the development server:
+Designed with scalability, responsiveness, and clean architecture in mind, Agentra AI demonstrates modern full-stack development practices together with practical AI integration.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🌐 Live Demo
+
+**Frontend:** https://agentra-client.vercel.app/
+
+
+---
+
+## 📂 GitHub Repositories
+
+### Frontend
+(https://github.com/raklinchakma021-pixel/agentra-client)
+
+### Backend
+https://github.com/raklinchakma021-pixel/agentra-server)
+
+---
+
+# ✨ Features
+
+## 🏠 Landing Page
+
+- Modern responsive design
+- Sticky navigation
+- Interactive Hero Section
+- Features Section
+- AI Workflow Section
+- Statistics Dashboard
+- Testimonials
+- FAQ
+- Newsletter
+- Call To Action
+- Professional Footer
+
+---
+
+## 🔐 Authentication
+
+- Email & Password Login
+- User Registration
+- Google Authentication
+- JWT Protected Routes
+- Demo Login
+- Secure Session Management
+
+---
+
+## 🤖 AI Features
+
+### AI Content Generator
+
+Generate high-quality AI content using structured prompts.
+
+Features
+
+- Multiple prompt templates
+- Adjustable output length
+- Regenerate response
+- Copy generated text
+- Download generated content
+- AI generation history
+
+---
+
+### AI Knowledge Hub
+
+Browse curated AI learning resources.
+
+Features
+
+- Search
+- Filter by category
+- Sort articles
+- Pagination
+- Details page
+- Related articles
+
+---
+
+## 📚 Knowledge Management
+
+Authenticated users can
+
+- Add Articles
+- Manage Articles
+- Delete Articles
+- View Details
+
+---
+
+## 📊 Analytics Dashboard
+
+Visual statistics using charts.
+
+Includes
+
+- Total Articles
+- AI Generations
+- Active Users
+- Monthly Activity
+- Category Distribution
+
+Built using:
+
+- Recharts
+
+---
+
+## 🔎 Explore Page
+
+Supports
+
+- Search
+- Category Filter
+- Level Filter
+- Sorting
+- Pagination
+- Responsive Grid
+- Skeleton Loading
+
+---
+
+## 📄 Details Page
+
+Each article includes
+
+- Featured Image
+- Full Description
+- Specifications
+- Ratings
+- Reviews
+- Related Articles
+
+---
+
+## 📱 Responsive Design
+
+Fully optimized for
+
+- Desktop
+- Tablet
+- Mobile
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- DaisyUI
+- TanStack Query
+- Axios
+- React Hook Form
+- React Hot Toast
+- Lucide React
+- Recharts
+
+---
+
+## Backend
+
+- Node.js
+- Express.js
+- TypeScript
+- MongoDB
+- Mongoose
+- JWT Authentication
+- Better Auth
+- Zod Validation
+
+---
+
+## AI
+
+- Groq API
+- Llama 3 Model
+
+---
+
+# 📁 Project Structure
+
+## Frontend
+
+```
+src/
+│
+├── app/
+├── components/
+├── hooks/
+├── services/
+├── lib/
+├── types/
+├── providers/
+└── utils/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Backend
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+│
+├── config/
+├── middlewares/
+├── modules/
+│   ├── ai/
+│   ├── auth/
+│   ├── analytics/
+│   ├── items/
+│   └── users/
+├── utils/
+├── app.ts
+└── server.ts
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+# ⚙️ Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Clone Repository
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+git clone https://github.com/yourusername/agentra-client.git
 
-## Deploy on Vercel
+git clone https://github.com/yourusername/agentra-server.git
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Frontend Setup
+
+```bash
+cd agentra-client
+
+npm install
+
+npm run dev
+```
+
+---
+
+## Backend Setup
+
+```bash
+cd agentra-server
+
+npm install
+
+npm run dev
+```
+
+---
+
+# 🔑 Environment Variables
+
+## Frontend (.env.local)
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:5000/api
+
+NEXT_PUBLIC_GOOGLE_CLIENT_ID=YOUR_GOOGLE_CLIENT_ID
+```
+
+---
+
+## Backend (.env)
+
+```env
+PORT=5000
+
+NODE_ENV=development
+
+MONGODB_URI=YOUR_MONGODB_URI
+
+JWT_SECRET=YOUR_SECRET_KEY
+
+GROQ_API_KEY=YOUR_GROQ_API_KEY
+
+BETTER_AUTH_SECRET=YOUR_BETTER_AUTH_SECRET
+
+BETTER_AUTH_URL=http://localhost:5000
+```
+
+---
+
+# 🚀 API Endpoints
+
+## Authentication
+
+```
+POST   /api/auth/register
+
+POST   /api/auth/login
+
+GET    /api/auth/me
+```
+
+---
+
+## AI
+
+```
+POST   /api/ai/generate
+
+POST   /api/ai/regenerate
+
+GET    /api/ai/history
+
+DELETE /api/ai/history/:id
+```
+
+---
+
+## Knowledge
+
+```
+GET    /api/items
+
+GET    /api/items/:id
+
+POST   /api/items
+
+DELETE /api/items/:id
+```
+
+---
+
+## Analytics
+
+```
+GET /api/analytics
+```
+
+---
+
+# 📈 Application Workflow
+
+```
+User Login
+      │
+      ▼
+Dashboard
+      │
+      ├───────────────┐
+      ▼               ▼
+
+AI Generator      Knowledge Hub
+      │               │
+      ▼               ▼
+Generate AI      Browse Articles
+      │               │
+      ▼               ▼
+History       Details / Manage
+      │
+      ▼
+Analytics
+```
+
+---
+
+# 🔒 Security
+
+- JWT Authentication
+- Protected Routes
+- Password Hashing
+- Input Validation
+- Environment Variables
+- Secure API Design
+- Error Handling
+
+---
+
+# 🎯 Assignment Requirements Covered
+
+- Full Stack Application
+- TypeScript
+- Responsive Design
+- Authentication
+- Protected Routes
+- CRUD Operations
+- AI Integration
+- Analytics Dashboard
+- Search
+- Filter
+- Pagination
+- Sorting
+- Loading Skeleton
+- Details Page
+- Landing Page
+- About Page
+- Contact Page
+- Production Ready Architecture
+
+---
+
+# 📸 Screenshots
+
+## Home
+
+Add screenshot here
+
+---
+
+## AI Generator
+
+Add screenshot here
+
+---
+
+## Knowledge Hub
+
+Add screenshot here
+
+---
+
+## Dashboard
+
+Add screenshot here
+
+---
+
+# 🔮 Future Improvements
+
+- AI Chat Assistant
+- Streaming AI Responses
+- AI Recommendation Engine
+- AI Document Analysis
+- AI Image Understanding
+- Dark Mode
+- Bookmark System
+- User Profiles
+- Notifications
+- Admin Dashboard
+
+---
+
+# 👨‍💻 Author
+
+**Raklin Chakma**
+
+📧 Email: raklinchakma021@gmail.com
+
+📱 Phone: +8801609981948
+
+GitHub: https://github.com/raklinchakma021-pixel
+
+LinkedIn: https://linkedin.com/in/your-linkedin
+
+---
+
+# 📜 License
+
+This project is created for educational purposes and full-stack AI development practice.
+
+---
+
+## ⭐ If you like this project, don't forget to give it a star on GitHub!
