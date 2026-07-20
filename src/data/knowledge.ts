@@ -1,4 +1,6 @@
-export const knowledge = [
+
+import { KnowledgeArticle } from "@/types/knowledge";
+export const knowledge: KnowledgeArticle[] = [
   {
     _id: "1",
     title: "Prompt Engineering for Better AI Responses",
