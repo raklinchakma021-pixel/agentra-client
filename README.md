@@ -1,6 +1,6 @@
-# 🤖 Agentra AI – Full Stack Agentic AI Platform
+# 🤖 Agentra AI Knowledge hub – Full Stack Agentic AI Platform
 
-Agentra AI is a modern Full Stack Agentic AI web application built with **Next.js, Express.js, TypeScript, MongoDB, and Groq AI**. The platform combines AI-powered content generation, an AI Knowledge Hub, analytics, and secure authentication into a production-ready application.
+Agentra AI Knowledge HUb is a modern Full Stack Agentic AI web application built with **Next.js, Express.js, TypeScript, MongoDB, and Groq AI**. The platform combines AI-powered content generation, an AI Knowledge Hub, analytics, and secure authentication into a production-ready application.
 
 Designed with scalability, responsiveness, and clean architecture in mind, Agentra AI demonstrates modern full-stack development practices together with practical AI integration.
 
