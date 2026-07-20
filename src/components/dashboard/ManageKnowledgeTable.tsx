@@ -174,7 +174,7 @@ console.log("DATA:", data);
 
         <div className="flex gap-3 mt-6">
           <Link
-            href={`/items/${item._id}`}
+         href={`/knowledge/${article._id}`}
             className="btn btn-primary bg-blue-600 text-white px-4 flex-1"
           >
             View
